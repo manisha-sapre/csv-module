@@ -1,0 +1,23 @@
+// Format individual characters, clean up the csv data before import it into the mySQL database
+// replace the special charachters e.g percent sign (%) with ()
+
+import csv
+import string
+
+input_file = open('SNPlist.csv', 'r')
+output_file = open('Output.csv', 'w')
+data = csv.reader(input_file)
+writer = csv.writer(output_file)
+specials = ['%''åÊ''$''!''Û''Ò']
+
+// maketrans() maps each character 
+from string import maketrans   # Required to call maketrans function.
+// len() returns the number of elements in the list
+
+for line in data:
+    trans = s.makestrans(specials, ''*len(specials)) 
+    new_line = line.translate(trans)
+    writer.writerow(new_line)
+
+input_file.close()
+output_file.close()
