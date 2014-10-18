@@ -1,0 +1,17 @@
+// Finding nonidentifier characters
+//  read the data as a sequence of dictionaries
+
+import csv
+with open('SNPlist.csv') as f:
+    f_csv = csv.DictReader(f)
+    for row in f_csv:
+        # process row
+// dictionary values contain special characters like this ? # $
+// Method.1 escape() and unescape() functions in xml.sax.saxutils
+// Method.2 str.isalnum() python
+
+// str.isalnum() Return True if all characters in S are alphanumeric
+// and there is at least one character in S, False otherwise.
+	str = " ";  # No space in this string
+	''.join(e for e in string if e.isalnum())
+	print str.isalnum();
