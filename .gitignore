@@ -1,54 +1,25 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
+//import the csv module.
+import csv
+with open('SNPslist.csv', 'rb') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print row
+//Reading CSV files
+// following python program will read csv and displays its contents.
+ifile  = open('SNPslist.csv', "rb")
+reader = csv.reader(ifile)
 
-# C extensions
-*.so
+rownum = 0
+for row in reader:
+    # Save header row.
+    if rownum == 0:
+        header = row
+    else:
+        colnum = 0
+        for col in row:
+            print '%-8s: %s' % (header[colnum], col)
+            colnum += 1
+            
+    rownum += 1
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
+ifile.close()
