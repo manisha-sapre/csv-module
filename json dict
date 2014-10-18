@@ -1,0 +1,38 @@
+// Create Dictionary
+
+def readFile():
+    new_dict = {}
+    myFile = open('SNPslist.csv', 'r')
+    for line in myFile
+    with open('SNPslist.csv', 'r') as f:
+        for line in f:
+            elements = line.rstrip().split(" ")[3]
+            dictList.append(dict(zip(elements[2], 
+            elements[12])))
+// data = [line.strip().split(':')
+// will remove empty lines and strip whitespaces
+// Parsing through Json file with Python
+import json
+//json.dump() method:
+data = []
+with open("C:\\Users\\Me\\Desktop\\SNPslist.xls", 'r') as json_string:
+    for line in json_string:
+    data.append(json.loads(line)) 
+    result = load(file)
+    //data is a dictionary and not yet JSON-encoded hence
+    import json
+with open('SNPslist.csv', 'w') as outfile:
+  json.dump(data, outfile)
+file.close()
+print (type(result))
+print (result.keys())
+print (result)
+// handling exception Python
+try:
+   fh = open("SNPslist.csv", "w")
+   fh.write("This is my test file for exception handling!!")
+except IOError:
+   print "Error: can't find file or read data"
+else:
+   print "Written content in the file successfully"
+   fh.close()
